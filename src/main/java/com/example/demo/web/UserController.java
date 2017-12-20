@@ -1,5 +1,6 @@
 package com.example.demo.web;
 
+
 import com.example.demo.model.User;
 import com.example.demo.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,10 @@ public class UserController {
     private UserServiceImpl userServiceImpl;
 
     @ResponseBody
-    @RequestMapping(value = "/",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public User saveUser(@RequestParam String name){
-        User user = userServiceImpl.saveOnme(name);
-        return user;
+        User u = userServiceImpl.saveOnme(name);
+        return u;
     }
 
     @ResponseBody
